@@ -1,0 +1,10 @@
+{
+    "Logging":{
+        "Logging": {
+            "Default":"Warning"
+        }
+    },
+    "EmailSettings":{
+        "EmailTo":"Angga@gmail.com"
+    }
+}

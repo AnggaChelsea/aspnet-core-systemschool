@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetAngularAuthWebApi", "NetAngularAuthWebApi.csproj", "{3854A15C-C7B4-4303-9912-B73D4BB1EAF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "emailapp", "..\..\emailapp\emailapp.csproj", "{8C38CF79-EDBF-4071-8823-14EB6954956F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Array", "..\..\basic_fundamental\Array\Array.csproj", "{4DCDF162-4BCC-4A1D-8499-7F39107F2EB5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3854A15C-C7B4-4303-9912-B73D4BB1EAF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3854A15C-C7B4-4303-9912-B73D4BB1EAF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3854A15C-C7B4-4303-9912-B73D4BB1EAF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3854A15C-C7B4-4303-9912-B73D4BB1EAF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C38CF79-EDBF-4071-8823-14EB6954956F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C38CF79-EDBF-4071-8823-14EB6954956F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C38CF79-EDBF-4071-8823-14EB6954956F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C38CF79-EDBF-4071-8823-14EB6954956F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DCDF162-4BCC-4A1D-8499-7F39107F2EB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DCDF162-4BCC-4A1D-8499-7F39107F2EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DCDF162-4BCC-4A1D-8499-7F39107F2EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DCDF162-4BCC-4A1D-8499-7F39107F2EB5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ACAC0439-23B5-4834-8B28-689C68837DD0}
+	EndGlobalSection
+EndGlobal
