@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using NetAngularAuthWebApi.Models;
 using NetAngularAuthWebApi.Models.Domain;
 using NetAngularAuthWebApi.Models.Dto;
+using NetAngularAuthWebApi.version.CqrsMediatR.Models;
 
 namespace NetAngularAuthWebApi.Context
 {
@@ -31,6 +32,8 @@ namespace NetAngularAuthWebApi.Context
         public DbSet<CartCourse> CartCourses { get; set; }
         public DbSet<Roles> Roles { get; set; }
         public DbSet<Mapel> Mapels { get; set; }
+        
+        public DbSet<FileDetails> FileDetails { get; set; }
 
 
         //create fluent api
@@ -45,6 +48,7 @@ namespace NetAngularAuthWebApi.Context
             modelBuilder.Entity<Jadwal>().HasOne(x => x.SchoolClass).WithMany(y => y.Jadwals);
             // modelBuilder.Entity<Jadwal>().HasOne<SchoolClass>(x => x.SchoolClass).WithMany(y => y.Jadwal);
             modelBuilder.Entity<Mapel>().HasOne(x => x.Teachers).WithMany(s => s.Mapels);
+
         }
 
 }

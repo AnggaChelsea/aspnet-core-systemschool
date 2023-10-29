@@ -97,11 +97,14 @@ namespace NetAngularAuthWebApi.Controllers
 
                 return BadRequest();
                 }
-
+            var responseNotFound = new {
+                Code = 404,
+                Message = $"{studentDtoLogin.FullName} Not Found",
+            };
             var existing_user = await _student.Students.FirstOrDefaultAsync(x => x.FullName == studentDtoLogin.FullName && x.NIM == studentDtoLogin.NIM);
             if(existing_user is null){
                 _logger.LogInformation($"Student email {studentDtoLogin.FullName} not found");
-                return BadRequest(new {Message = $"Student email {studentDtoLogin.FullName} not found"});
+                return NotFound(new {Message = responseNotFound});
             }
             var nameRoles = _appdbContext.Roles.FirstOrDefault(e => e.Id == existing_user.RolesId);
             Console.WriteLine(nameRoles.Name);

@@ -11,6 +11,8 @@ using NetAngularAuthWebApi.Models;
 using NetAngularAuthWebApi.Models.Dto;
 using Microsoft.AspNetCore.Authorization;
 using NetAngularAuthWebApi.Models.Domain;
+using Microsoft.AspNetCore.StaticFiles;
+using AutoMapper;
 
 namespace NetAngularAuthWebApi
 {
@@ -22,9 +24,17 @@ namespace NetAngularAuthWebApi
         private string _dataTampung;
         private readonly AppDbContext _schoolClass;
         // private readonly ILogger _logger;
-        public SchoolClassController(AppDbContext schoolClass)
+
+        //inject readFile 
+        private readonly FileExtensionContentTypeProvider _fileExtensionContentTypeProvider;
+
+        private readonly IMapper _mapper;
+
+        public SchoolClassController(AppDbContext schoolClass, FileExtensionContentTypeProvider fileExtensionContentTypeProvider = null, IMapper mapper = null)
         {
             _schoolClass = schoolClass;
+            _fileExtensionContentTypeProvider = fileExtensionContentTypeProvider ?? throw new ArgumentNullException(nameof(_fileExtensionContentTypeProvider));
+            _mapper = mapper;
             // _logger = logger;
         }
 
@@ -127,10 +137,17 @@ namespace NetAngularAuthWebApi
 
 
         [HttpGet("get-school-class")]
-        public IActionResult GetSchoolClass()
+        public IActionResult GetSchoolClass(string sortOrder, string searchString, int page)
         {
             try
             {
+                var CurrentFilter = sortOrder;
+                if(searchString != null){
+                    page = 1;
+                }else{
+                    searchString = CurrentFilter;
+                }
+                CurrentFilter = searchString;
                 var dataclass = _schoolClass.SchoolClasses.ToList();
                 var dataStudent = _schoolClass?.Students?.ToList();
                 var teacherl = _schoolClass.Teachers.ToList();
@@ -140,6 +157,9 @@ namespace NetAngularAuthWebApi
                 var response = new ResponseData();
                 response.Message = "Success Get Data";
                 response.Data = new List<SchoolClass>();
+                if(!String.IsNullOrEmpty(searchString)){
+                   var filter = dataclass.Where(s => s.NameOfHeadSchool.Contains(searchString) || s.NameOfSchool.Contains(searchString));
+                }
                 foreach (var datacls in dataStudent)
                 {
                     var collecData = dataclass.FirstOrDefault(x => x.Id == datacls.SchoolClassId);
@@ -163,6 +183,27 @@ namespace NetAngularAuthWebApi
                 // _logger.LogInformation(e.Message);
                 return BadRequest(e.Message);
             }
+        }
+
+        [HttpGet("download-file/class")]
+        public ActionResult GetFile(string fileId){
+            var pathTo = "bankbjb.pdf";
+
+            //check is file exists
+            if(!System.IO.File.Exists(pathTo)){
+                return NotFound(pathTo);
+            }
+
+            //check type of file content
+            if(!_fileExtensionContentTypeProvider.TryGetContentType(
+                pathTo, out var contentType
+            )){
+                contentType = "application/octet-stream";
+            }
+
+
+            var bytes = System.IO.File.ReadAllBytes(pathTo);
+            return File(bytes, contentType, Path.GetFileName(pathTo));
         }
 
         private Object DoGetData(User user)

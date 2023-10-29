@@ -9,6 +9,7 @@ using Serilog;
 using NetAngularAuthWebApi.Services;
 using NetAngularAuthWebApi.Services.Student;
 using Sieve.Services;
+using Microsoft.AspNetCore.StaticFiles;
 
 Log.Logger = new LoggerConfiguration()
 .MinimumLevel.Debug()
@@ -23,11 +24,24 @@ builder.Logging.AddConsole();
 builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddScoped<IMailService, LocalMailService>();
 builder.Services.AddScoped<IStudentService, StudentService>();
+//for response file
+builder.Services.AddSingleton<FileExtensionContentTypeProvider>();
+
+//add inject service
+builder.Services.AddScoped<IFileService, FileService>();
+
+
+//add automapper object dto
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+//inject the mediatr to our DI
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Program).Assembly));
 
 builder.Services.AddAuthorization(options => {
     options.AddPolicy("AllowStudentandTeacher", policy => policy.RequireRole("teacher", "student"));
 });
-builder.Services.AddControllers();
+builder.Services.AddControllers(options => {
+    options.ReturnHttpNotAcceptable = true;
+}).AddXmlDataContractSerializerFormatters();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<SieveProcessor>();
