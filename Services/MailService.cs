@@ -1,4 +1,5 @@
- namespace NetAngularAuthWebApi.Services;
+
+namespace NetAngularAuthWebApi.Services;
 
  public class LocalMailService : IMailService {
     private string _mailTo = String.Empty;
@@ -17,6 +18,9 @@
       Console.WriteLine($"Message: {message}");
     }
 
-   
+    public Task SendEmail(string email, string subject, string message)
+    {
+        throw new NotImplementedException();
+    }
 }
 

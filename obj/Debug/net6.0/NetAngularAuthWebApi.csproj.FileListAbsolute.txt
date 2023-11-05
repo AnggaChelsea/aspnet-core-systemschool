@@ -110,7 +110,6 @@ C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWeb
 C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\obj\Debug\net6.0\NetAngularAuthWebApi.csproj.CoreCompileInputs.cache
 C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\obj\Debug\net6.0\NetAngularAuthWebApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\obj\Debug\net6.0\NetAngularAuthWebApi.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\obj\Debug\net6.0\NetAngularAuthWebApi.sourcelink.json
 C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\obj\Debug\net6.0\staticwebassets\msbuild.NetAngularAuthWebApi.Microsoft.AspNetCore.StaticWebAssets.props
@@ -125,3 +124,15 @@ C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWeb
 C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\obj\Debug\net6.0\NetAngularAuthWebApi.pdb
 C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\obj\Debug\net6.0\NetAngularAuthWebApi.genruntimeconfig.cache
 C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\obj\Debug\net6.0\ref\NetAngularAuthWebApi.dll
+C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\MailKit.dll
+C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\MimeKit.dll
+C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\System.Formats.Asn1.dll
+C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\Syncfusion.Compression.Portable.dll
+C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\Syncfusion.DocIO.Portable.dll
+C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\Syncfusion.Licensing.dll
+C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\Syncfusion.OfficeChart.Portable.dll

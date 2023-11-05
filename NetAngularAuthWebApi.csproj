@@ -39,5 +39,8 @@
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0"/>
     <PackageReference Include="MediatR" Version="12.1.1"/>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1"/>
+    <PackageReference Include="MailKit" Version="4.2.0"/>
+    <PackageReference Include="Syncfusion.DocIO.Net.Core" Version="23.1.43"/>
+    <PackageReference Include="System.Net.Http" Version="4.3.4"/>
   </ItemGroup>
 </Project>

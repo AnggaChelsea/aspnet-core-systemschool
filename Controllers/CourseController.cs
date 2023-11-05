@@ -13,7 +13,7 @@ using NetAngularAuthWebApi.Models.Dto;
 
 namespace NetAngularAuthWebApi.Controllers
 {
-    [Authorize]
+    // [Authorize]
     [ApiController]
     [Route("api/course")]
     public class CourseController : ControllerBase

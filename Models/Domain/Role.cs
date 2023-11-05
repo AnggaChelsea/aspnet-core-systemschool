@@ -10,6 +10,7 @@ namespace NetAngularAuthWebApi.Models.Domain
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
+        public string NameFileUpload { get; set; }
         public Collection<Teacher> Teachers { get; set; }
         public Collection<Student> Students { get; set; }
     }

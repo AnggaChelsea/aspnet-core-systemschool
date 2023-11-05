@@ -10,6 +10,7 @@ namespace NetAngularAuthWebApi.Models.Dto
      
         public string id { get; set; }
         public string Name { get; set; }
+        public string NameFileUpload { get; set; }
     
     }
 }

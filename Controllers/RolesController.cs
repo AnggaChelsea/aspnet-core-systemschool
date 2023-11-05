@@ -10,7 +10,7 @@ using NetAngularAuthWebApi.Models.Dto;
 
 namespace NetAngularAuthWebApi.Controllers
 {
-    [Authorize(Roles = "admin")]
+    // [Authorize(Roles = "admin")]
     [ApiController]
     [Route("api/roles")]
     public class RolesController : ControllerBase
@@ -35,6 +35,7 @@ namespace NetAngularAuthWebApi.Controllers
                 var body = new Roles
                 {
                     Name = roles.Name,
+                    NameFileUpload = roles.NameFileUpload
                 };
                 if (body == null)
                 {

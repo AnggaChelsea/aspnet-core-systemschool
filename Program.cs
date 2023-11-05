@@ -10,6 +10,7 @@ using NetAngularAuthWebApi.Services;
 using NetAngularAuthWebApi.Services.Student;
 using Sieve.Services;
 using Microsoft.AspNetCore.StaticFiles;
+using NetAngularAuthWebApi.Services.Email;
 
 Log.Logger = new LoggerConfiguration()
 .MinimumLevel.Debug()
@@ -24,6 +25,7 @@ builder.Logging.AddConsole();
 builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddScoped<IMailService, LocalMailService>();
 builder.Services.AddScoped<IStudentService, StudentService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 //for response file
 builder.Services.AddSingleton<FileExtensionContentTypeProvider>();
 

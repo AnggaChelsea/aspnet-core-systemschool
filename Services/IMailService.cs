@@ -7,6 +7,6 @@ namespace NetAngularAuthWebApi.Services
 {
    public interface IMailService
 {
-     void Send(string subject, string message);
+     Task SendEmail(string email, string subject, string message);
 }
 }

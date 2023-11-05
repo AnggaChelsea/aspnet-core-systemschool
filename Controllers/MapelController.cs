@@ -63,7 +63,7 @@ namespace NetAngularAuthWebApi.Controllers
         [HttpGet("get-mapel")]
         public IActionResult GetMapel(){
             try{
-                _imailService.Send("TestSub", "jangan sombong");
+                // _imailService.Send("TestSub", "jangan sombong");
                 _studentService.CreateStudent("angga created");
                 var listdata = _dbContext.Mapels.ToList();
                 // var teacherList = _dbContext.Teachers.ToList();
