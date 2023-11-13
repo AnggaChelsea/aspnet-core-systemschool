@@ -20,28 +20,77 @@ namespace NetAngularAuthWebApi.Controllers
             _uploadService = uploadService;
         }
         [HttpPost("upload-files")]
-        public async Task<IActionResult> PostSigleFile([FromBody] FileUploadModel fileDetails){
-            if(fileDetails == null){
+        public async Task<IActionResult> PostSigleFile([FromBody] FileUploadModel fileDetails)
+        {
+            if (fileDetails == null)
+            {
                 return BadRequest();
             }
-            try{
+            try
+            {
                 await _uploadService.PostFileAsync(fileDetails.FileDetails, fileDetails.FileType);
                 return Ok();
-            }catch(Exception ){
+            }
+            catch (Exception)
+            {
                 throw;
             }
         }
         [HttpGet("download-file")]
-        public async Task<IActionResult> DownloadFileAsync(Guid id){
-            if(id.ToString() == string.Empty){
+        public async Task<IActionResult> DownloadFileAsync(Guid id)
+        {
+            if (id.ToString() == string.Empty)
+            {
                 return BadRequest();
             }
-            try{
+            try
+            {
                 await _uploadService.DownloadFileId(id);
                 return Ok();
-            }catch(Exception){
+            }
+            catch (Exception)
+            {
                 throw new ArgumentException();
             }
+        }
+
+
+        [HttpPost]
+        public IActionResult MultiUpload(MultipleFilesModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                model.IsResponse = true;
+                if (model.Files.Count > 0)
+                {
+                    foreach (var file in model.Files)
+                    {
+
+                        string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Files");
+
+                        //create folder if not exist
+                        if (!Directory.Exists(path))
+                            Directory.CreateDirectory(path);
+
+
+                        string fileNameWithPath = Path.Combine(path, file.FileName);
+
+                        using (var stream = new FileStream(fileNameWithPath, FileMode.Create))
+                        {
+                            file.CopyTo(stream);
+                        }
+                    }
+                    model.IsSuccess = true;
+                    model.Message = "Files upload successfully";
+                }
+                else
+                {
+                    model.IsSuccess = false;
+                    model.Message = "Please select files";
+                }
+            }
+            return null;
+
         }
     }
 }

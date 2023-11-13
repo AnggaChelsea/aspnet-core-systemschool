@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TQvF8RNP6d5+IR2VpLM/bsa+pMwXyftWk7QD6y4evYlIewuBYKrpqLZHZUXUWPs2g+0nwYizkQOPiBZt5OI26g==",
+  "dgSpecHash": "SQsl0/LlF0HDobe50MEqTtvXjWvreWvwhOExR3Pg+rkJd2aBfbAU+/S2arDZcFJTFE+/UvPl5OzInmz4+6rC2Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Angga Lesmana\\Documents\\mine\\coding\\C#\\NetAngularAuth\\NetAngularAuthWebApi\\NetAngularAuthWebApi.csproj",
   "expectedPackageFiles": [
@@ -90,6 +90,8 @@
     "C:\\Users\\Angga Lesmana\\.nuget\\packages\\mimekit\\4.2.0\\mimekit.4.2.0.nupkg.sha512",
     "C:\\Users\\Angga Lesmana\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\Angga Lesmana\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Angga Lesmana\\.nuget\\packages\\pdfsharpcore\\1.1.21\\pdfsharpcore.1.1.21.nupkg.sha512",
+    "C:\\Users\\Angga Lesmana\\.nuget\\packages\\polybioz.htmlrenderer.pdfsharp.core\\1.0.0\\polybioz.htmlrenderer.pdfsharp.core.1.0.0.nupkg.sha512",
     "C:\\Users\\Angga Lesmana\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
     "C:\\Users\\Angga Lesmana\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\Angga Lesmana\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
@@ -116,6 +118,9 @@
     "C:\\Users\\Angga Lesmana\\.nuget\\packages\\serilog.sinks.debug\\2.0.0\\serilog.sinks.debug.2.0.0.nupkg.sha512",
     "C:\\Users\\Angga Lesmana\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
     "C:\\Users\\Angga Lesmana\\.nuget\\packages\\sieve\\2.5.5\\sieve.2.5.5.nupkg.sha512",
+    "C:\\Users\\Angga Lesmana\\.nuget\\packages\\sixlabors.core\\1.0.0-beta0008\\sixlabors.core.1.0.0-beta0008.nupkg.sha512",
+    "C:\\Users\\Angga Lesmana\\.nuget\\packages\\sixlabors.fonts\\1.0.0-beta0009\\sixlabors.fonts.1.0.0-beta0009.nupkg.sha512",
+    "C:\\Users\\Angga Lesmana\\.nuget\\packages\\sixlabors.imagesharp\\1.0.0-beta0006\\sixlabors.imagesharp.1.0.0-beta0006.nupkg.sha512",
     "C:\\Users\\Angga Lesmana\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\Angga Lesmana\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\Angga Lesmana\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",

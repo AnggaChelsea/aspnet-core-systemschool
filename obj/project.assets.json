@@ -1513,6 +1513,33 @@
           }
         }
       },
+      "PdfSharpCore/1.1.21": {
+        "type": "package",
+        "dependencies": {
+          "SixLabors.Fonts": "1.0.0-beta0009",
+          "SixLabors.ImageSharp": "1.0.0-beta0006"
+        },
+        "compile": {
+          "lib/netstandard2.0/PdfSharpCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/PdfSharpCore.dll": {}
+        }
+      },
+      "Polybioz.HtmlRenderer.PdfSharp.Core/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "PdfSharpCore": "1.1.21"
+        },
+        "compile": {
+          "lib/netcoreapp2.1/HtmlRenderer.Core.dll": {},
+          "lib/netcoreapp2.1/HtmlRenderer.PdfSharp.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/HtmlRenderer.Core.dll": {},
+          "lib/netcoreapp2.1/HtmlRenderer.PdfSharp.Core.dll": {}
+        }
+      },
       "Portable.BouncyCastle/1.9.0": {
         "type": "package",
         "compile": {
@@ -1858,6 +1885,55 @@
         "runtime": {
           "lib/netstandard2.1/Sieve.dll": {
             "related": ".pdb"
+          }
+        }
+      },
+      "SixLabors.Core/1.0.0-beta0008": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.1"
+        },
+        "compile": {
+          "lib/netcoreapp2.1/SixLabors.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/SixLabors.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SixLabors.Fonts/1.0.0-beta0009": {
+        "type": "package",
+        "dependencies": {
+          "SixLabors.Core": "1.0.0-beta0008"
+        },
+        "compile": {
+          "lib/netstandard2.0/SixLabors.Fonts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/SixLabors.Fonts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SixLabors.ImageSharp/1.0.0-beta0006": {
+        "type": "package",
+        "dependencies": {
+          "SixLabors.Core": "1.0.0-beta0007",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.1"
+        },
+        "compile": {
+          "lib/netcoreapp2.1/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -5453,6 +5529,33 @@
         "packageIcon.png"
       ]
     },
+    "PdfSharpCore/1.1.21": {
+      "sha512": "ZD83JHSAZgnnKjBQc4PgFEBNqUKHrmcSYaM2F5IKMhkjGbT6k30ejIyIwcR7PXVhXK/qSHRALExs3ToslHP/GQ==",
+      "type": "package",
+      "path": "pdfsharpcore/1.1.21",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.3/PdfSharpCore.dll",
+        "lib/netstandard2.0/PdfSharpCore.dll",
+        "pdfsharpcore.1.1.21.nupkg.sha512",
+        "pdfsharpcore.nuspec"
+      ]
+    },
+    "Polybioz.HtmlRenderer.PdfSharp.Core/1.0.0": {
+      "sha512": "C9EojDjpA8AVgYanheShfuvwpvUcUWpQgXEgSftcWMzicTo5+HU7Dni34xipmUV3YWoq+DO3dW4vuHJlAV2ybQ==",
+      "type": "package",
+      "path": "polybioz.htmlrenderer.pdfsharp.core/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/netcoreapp2.1/HtmlRenderer.Core.dll",
+        "lib/netcoreapp2.1/HtmlRenderer.PdfSharp.Core.dll",
+        "polybioz.htmlrenderer.pdfsharp.core.1.0.0.nupkg.sha512",
+        "polybioz.htmlrenderer.pdfsharp.core.nuspec"
+      ]
+    },
     "Portable.BouncyCastle/1.9.0": {
       "sha512": "eZZBCABzVOek+id9Xy04HhmgykF0wZg9wpByzrWN7q8qEI0Qen9b7tfd7w8VA3dOeesumMG7C5ZPy0jk7PSRHw==",
       "type": "package",
@@ -5867,6 +5970,59 @@
         "lib/netstandard2.1/Sieve.pdb",
         "sieve.2.5.5.nupkg.sha512",
         "sieve.nuspec"
+      ]
+    },
+    "SixLabors.Core/1.0.0-beta0008": {
+      "sha512": "rrKPDN107tVOh+mUoNh+kHELa7WfYZREPPbYdiKJ3Rd6dex/UgDWDGBOjPJn4BBhmts/VGuaXMXyfT/BwiuH2g==",
+      "type": "package",
+      "path": "sixlabors.core/1.0.0-beta0008",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp2.0/SixLabors.Core.dll",
+        "lib/netcoreapp2.0/SixLabors.Core.xml",
+        "lib/netcoreapp2.1/SixLabors.Core.dll",
+        "lib/netcoreapp2.1/SixLabors.Core.xml",
+        "lib/netstandard1.3/SixLabors.Core.dll",
+        "lib/netstandard1.3/SixLabors.Core.xml",
+        "lib/netstandard2.0/SixLabors.Core.dll",
+        "lib/netstandard2.0/SixLabors.Core.xml",
+        "sixlabors.core.1.0.0-beta0008.nupkg.sha512",
+        "sixlabors.core.nuspec"
+      ]
+    },
+    "SixLabors.Fonts/1.0.0-beta0009": {
+      "sha512": "jCSh8Ei/epW1zInmRReIovIzHGPB1zifwDaj4+Yb7aGCs5MbRHi69kl2+QM9Ov5X19IgKhHn833dd4S0OQ3sEw==",
+      "type": "package",
+      "path": "sixlabors.fonts/1.0.0-beta0009",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.3/SixLabors.Fonts.dll",
+        "lib/netstandard1.3/SixLabors.Fonts.xml",
+        "lib/netstandard2.0/SixLabors.Fonts.dll",
+        "lib/netstandard2.0/SixLabors.Fonts.xml",
+        "sixlabors.fonts.1.0.0-beta0009.nupkg.sha512",
+        "sixlabors.fonts.nuspec"
+      ]
+    },
+    "SixLabors.ImageSharp/1.0.0-beta0006": {
+      "sha512": "VHDX00uAzPWj5qFYE5xJZyr5Cx4Jtd3p2dfX7swSrzlQoPEZPXXwQ+O3Fc4hNWvaNvR1NAiXSb27Ts6yv3lMDw==",
+      "type": "package",
+      "path": "sixlabors.imagesharp/1.0.0-beta0006",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net472/SixLabors.ImageSharp.dll",
+        "lib/net472/SixLabors.ImageSharp.xml",
+        "lib/netcoreapp2.1/SixLabors.ImageSharp.dll",
+        "lib/netcoreapp2.1/SixLabors.ImageSharp.xml",
+        "lib/netstandard1.3/SixLabors.ImageSharp.dll",
+        "lib/netstandard1.3/SixLabors.ImageSharp.xml",
+        "lib/netstandard2.0/SixLabors.ImageSharp.dll",
+        "lib/netstandard2.0/SixLabors.ImageSharp.xml",
+        "sixlabors.imagesharp.1.0.0-beta0006.nupkg.sha512",
+        "sixlabors.imagesharp.nuspec"
       ]
     },
     "Swashbuckle.AspNetCore/6.5.0": {
@@ -9544,6 +9700,7 @@
       "Microsoft.Extensions.Configuration >= 8.0.0-rc.1.23419.4",
       "Microsoft.IdentityModel.JsonWebTokens >= 7.1.0-preview",
       "Microsoft.OpenApi >= 1.6.9",
+      "Polybioz.HtmlRenderer.PdfSharp.Core >= 1.0.0",
       "Portable.BouncyCastle >= 1.9.0",
       "Serilog.AspNetCore >= 6.1.0",
       "Serilog.Sinks.Console >= 4.1.0",
@@ -9678,6 +9835,10 @@
           "Microsoft.OpenApi": {
             "target": "Package",
             "version": "[1.6.9, )"
+          },
+          "Polybioz.HtmlRenderer.PdfSharp.Core": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           },
           "Portable.BouncyCastle": {
             "target": "Package",

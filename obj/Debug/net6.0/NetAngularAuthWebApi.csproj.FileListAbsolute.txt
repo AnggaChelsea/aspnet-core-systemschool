@@ -136,3 +136,9 @@ C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWeb
 C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\Syncfusion.DocIO.Portable.dll
 C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\Syncfusion.Licensing.dll
 C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\Syncfusion.OfficeChart.Portable.dll
+C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\PdfSharpCore.dll
+C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\HtmlRenderer.Core.dll
+C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\HtmlRenderer.PdfSharp.Core.dll
+C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\SixLabors.Core.dll
+C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\SixLabors.Fonts.dll
+C:\Users\Angga Lesmana\Documents\mine\coding\C#\NetAngularAuth\NetAngularAuthWebApi\bin\Debug\net6.0\SixLabors.ImageSharp.dll

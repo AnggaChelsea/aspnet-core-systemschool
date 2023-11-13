@@ -120,6 +120,10 @@
               "target": "Package",
               "version": "[1.6.9, )"
             },
+            "Polybioz.HtmlRenderer.PdfSharp.Core": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Portable.BouncyCastle": {
               "target": "Package",
               "version": "[1.9.0, )"

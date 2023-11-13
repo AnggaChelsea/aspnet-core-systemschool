@@ -34,6 +34,7 @@ namespace NetAngularAuthWebApi.Context
         public DbSet<Mapel> Mapels { get; set; }
         
         public DbSet<FileDetails> FileDetails { get; set; }
+        public DbSet<MultiUploadFile> MultiUploadFiles { get; set; }
 
 
         //create fluent api

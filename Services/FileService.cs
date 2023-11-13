@@ -20,7 +20,7 @@ namespace NetAngularAuthWebApi.Services
         public async Task DownloadFileId(Guid Id)
         {
             try{
-                var file = await _appDbContext.FileDetails.Where(x => x.Id == Id).FirstOrDefaultAsync();
+                var file = await _appDbContext.FileDetails.Where(x => x.Id.ToString() == Id.ToString()).FirstOrDefaultAsync();
                 var content = new System.IO.MemoryStream(file.FileData);
                 var path = Path.Combine(
                     Directory.GetCurrentDirectory(), "FileDownload",
@@ -56,7 +56,6 @@ namespace NetAngularAuthWebApi.Services
         {
             try{
                var fileDetails = new FileDetails() {
-                Id = new Guid(),
                 FileName = fileData.FileName,
                 FileType = fileType
                };
