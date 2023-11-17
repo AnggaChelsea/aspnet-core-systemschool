@@ -46,6 +46,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Aspose.PDF": {
+              "target": "Package",
+              "version": "[23.10.0, )"
+            },
             "AutoMapper": {
               "target": "Package",
               "version": "[12.0.1, )"
@@ -69,6 +73,14 @@
             "Dapper.SqlBuilder": {
               "target": "Package",
               "version": "[2.0.78, )"
+            },
+            "DinkToPdf": {
+              "target": "Package",
+              "version": "[1.0.8, )"
+            },
+            "DinkToPdfCopy": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             },
             "FluentValidation": {
               "target": "Package",
@@ -120,6 +132,10 @@
               "target": "Package",
               "version": "[1.6.9, )"
             },
+            "PDFsharp": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Polybioz.HtmlRenderer.PdfSharp.Core": {
               "target": "Package",
               "version": "[1.0.0, )"
@@ -128,13 +144,29 @@
               "target": "Package",
               "version": "[1.9.0, )"
             },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.6.0, )"
+            },
+            "SelectPdf.Api": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
             "Serilog.AspNetCore": {
               "target": "Package",
               "version": "[6.1.0, )"
             },
+            "Serilog.Extensions.Logging": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Serilog.Sinks.Console": {
               "target": "Package",
-              "version": "[4.1.0, )"
+              "version": "[5.0.0, )"
             },
             "Serilog.Sinks.File": {
               "target": "Package",

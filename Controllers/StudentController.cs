@@ -22,6 +22,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authorization;
 using NetAngularAuthWebApi.Repository;
 using Sieve.Services;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 namespace NetAngularAuthWebApi.Controllers
 {
 
@@ -41,8 +42,10 @@ namespace NetAngularAuthWebApi.Controllers
         private readonly IConfiguration _config;
         private readonly DapperContext _context;
         private readonly SieveProcessor _sieveProcessor;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public StudentController(AppDbContext student, AppDbContext scClass, AppDbContext courses, IConfiguration config, DapperContext context, SieveProcessor sieveProcessor)
+
+        public StudentController(AppDbContext student, AppDbContext scClass, AppDbContext courses, IConfiguration config, DapperContext context, SieveProcessor sieveProcessor, IWebHostEnvironment webHostEnvironment)
         {
             _student = student;
             _scClass = scClass;
@@ -50,15 +53,87 @@ namespace NetAngularAuthWebApi.Controllers
             _config = config;
             _context = context;
             this._sieveProcessor = sieveProcessor;
+            _webHostEnvironment = webHostEnvironment;
         }
+        [HttpPost("uploadImageRetrive")]
+
+        public async Task<IActionResult> UploadImageRetrives([FromForm] List<IFormFile> _uploadFiles)
+        {
+            bool Result = false;
+            try
+            {
+                // var _uploadFiles = Request.Form.Files;
+                foreach (IFormFile source in _uploadFiles)
+                {
+                    string filename = source.FileName;
+                    string FilePath = GetFilePath(filename);
+                    if (!System.IO.Directory.Exists(FilePath))
+                    {
+                        System.IO.Directory.CreateDirectory(FilePath);
+                    }
+                    string imagepath = FilePath + "\\image.png";
+                    if (System.IO.File.Exists(imagepath))
+                    {
+                        System.IO.File.Delete(imagepath);
+                    }
+                    using (FileStream stream = System.IO.File.Create(imagepath))
+                    {
+                        await source.CopyToAsync(stream);
+                        Result = true;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            return Ok(Result);
+        }
+       [HttpDelete("delete-image")]
+        public ResponseType RemoveImage(string code){
+            try{
+          string Filepath =  GetFilePath(code);
+          string imagepath = Filepath + "\\image.png";
+           if (System.IO.File.Exists(imagepath))
+            {
+                System.IO.File.Delete(imagepath);
+            }
+            }catch(Exception ex){}
+            return new ResponseType {Result = "pass", KyValue = code};
+        }
+
+         [NonAction]
+        private string GetFilePath(string Filecode)
+        {
+            return _webHostEnvironment.WebRootPath + "\\Uploads\\" + Filecode;
+        }
+        [NonAction]
+
+        private string GetFilePathByProducts(string Filecode)
+        {
+            string ImageUrl = string.Empty;
+            string HostUrl = "https://localhost:7023/";
+            string filepath = GetFilePath(Filecode);
+            string imagepath = Filecode + "\\image.png";
+            if (!System.IO.File.Exists(imagepath))
+            {
+                ImageUrl = HostUrl + "/Uploads/common/noimage.png";
+            }
+            else
+            {
+                ImageUrl = HostUrl + "/Uploads/" + Filecode + "/image.png";
+            }
+            return ImageUrl;
+        }
+
+
 
         [AllowAnonymous]
         [HttpGet("get-students")]
         public IActionResult Siswa([FromQuery] string? fullName, int page = 1, int pageSize = 10)
         {
             var siswaDb = _student.Students.ToList();
-            var fullNameFilter = siswaDb.Where(e =>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     e.FullName.Contains(fullName)).ToList();
-            Console.WriteLine(fullNameFilter);
+            var fullNameFilter = siswaDb.Where(e =>e.FullName.Contains(fullName)).ToList();
                 var clasSiswa = _student.Students.Join(
                                _student.SchoolClasses,
                                s => s.SchoolClassId,
@@ -69,10 +144,11 @@ namespace NetAngularAuthWebApi.Controllers
                                    FullName = s.FullName,
                                    Age = s.Age,
                                    Nim = s.NIM,
+                                   Image = GetFilePathByProducts(s.NIM.ToString()),
                                    Address = s.Address,
                                    IsChangeSchool = s.IsChangeSchool,
                                    NameSchoolBefore = s.NameSchoolBefore,
-                                   Image = s.Image,
+                                //    Image = s.Image,
                                    IsActive = s.IsActive,
                                    RegisterTime = s.RegisterTime,
                                    NameOfSchool = c.NameOfSchool,

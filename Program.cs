@@ -11,6 +11,12 @@ using NetAngularAuthWebApi.Services.Student;
 using Sieve.Services;
 using Microsoft.AspNetCore.StaticFiles;
 using NetAngularAuthWebApi.Services.Email;
+using DinkToPdf.Contracts;
+using DinkToPdf;
+using Serilog;
+using NetAngularAuthWebApi.helpers;
+using Microsoft.Extensions.Configuration;
+using System.Configuration;
 
 Log.Logger = new LoggerConfiguration()
 .MinimumLevel.Debug()
@@ -18,20 +24,36 @@ Log.Logger = new LoggerConfiguration()
 .WriteTo.File("logs/controller.txt", rollingInterval: RollingInterval.Day).CreateLogger();
 
 
+ Log.Information("Starting web application");
+
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Logging.AddConsole();
+builder.Host.UseSerilog((context, configuration) =>
+    configuration.ReadFrom.Configuration(context.Configuration));
+
+
+var logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext()
+    .CreateLogger();
+
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
 
 builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddScoped<IMailService, LocalMailService>();
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+
+builder.Services.AddScoped<pdfGenerateDinkToPdf>();
 //for response file
 builder.Services.AddSingleton<FileExtensionContentTypeProvider>();
 
 //add inject service
 builder.Services.AddScoped<IFileService, FileService>();
-
+builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 
 //add automapper object dto
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
@@ -80,10 +102,15 @@ builder.Services.AddAuthentication(options => {
     };
 });
 
+builder.Services.Configure<RabbitMQSettings>(builder.Configuration.GetSection("RabbitMQ"));
+
+
 
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+//for view image
+app.UseStaticFiles();
 
 
 if (app.Environment.IsDevelopment())
@@ -91,6 +118,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseSerilogRequestLogging();
 
 app.UseHttpsRedirection();
 app.UseCors("MyPolic");
