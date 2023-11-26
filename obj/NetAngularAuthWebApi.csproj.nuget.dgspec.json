@@ -82,9 +82,25 @@
               "target": "Package",
               "version": "[1.0.0, )"
             },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "ExcelDataReader.DataSet": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            },
             "FluentValidation": {
               "target": "Package",
               "version": "[11.8.0, )"
+            },
+            "ITfoxtec.Identity.Saml2": {
+              "target": "Package",
+              "version": "[4.0.8, )"
+            },
+            "ITfoxtec.Identity.Saml2.MvcCore": {
+              "target": "Package",
+              "version": "[4.0.8, )"
             },
             "MailKit": {
               "target": "Package",
@@ -105,6 +121,10 @@
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
               "version": "[6.0.6, )"
+            },
+            "Microsoft.AspNetCore.Razor.Language": {
+              "target": "Package",
+              "version": "[6.0.25, )"
             },
             "Microsoft.AspNetCore.StaticFiles": {
               "target": "Package",

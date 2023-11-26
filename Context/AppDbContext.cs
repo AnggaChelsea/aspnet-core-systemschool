@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using NetAngularAuthWebApi.Models;
 using NetAngularAuthWebApi.Models.Domain;
+using NetAngularAuthWebApi.Models.Domain.UploadExcel;
 using NetAngularAuthWebApi.Models.Dto;
 using NetAngularAuthWebApi.version.CqrsMediatR.Models;
 
@@ -32,9 +33,13 @@ namespace NetAngularAuthWebApi.Context
         public DbSet<CartCourse> CartCourses { get; set; }
         public DbSet<Roles> Roles { get; set; }
         public DbSet<Mapel> Mapels { get; set; }
+        public DbSet<ExcelData> ExcelData { get; set; }
         
         public DbSet<FileDetails> FileDetails { get; set; }
         public DbSet<MultiUploadFile> MultiUploadFiles { get; set; }
+        public DbSet<UploadExcelStudent> uploadExcelStudents { get; set; }
+        public DbSet<Employee> Employees {get; set;}
+
 
 
         //create fluent api

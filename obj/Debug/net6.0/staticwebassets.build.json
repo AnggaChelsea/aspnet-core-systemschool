@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Iv18KkAu3bl0ySPUeuU7iOIGSXrn4ArgSyGAL2t8id0=",
+  "Hash": "TWpYouKYZi/gILY8khIPeD6+f/NH8cUjrlsQns+Jjl4=",
   "Source": "NetAngularAuthWebApi",
   "BasePath": "_content/NetAngularAuthWebApi",
   "Mode": "Default",
@@ -1037,6 +1037,23 @@
       "OriginalItemSpec": "C:\\Users\\Angga Lesmana\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.6\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt"
     },
     {
+      "Identity": "C:\\Users\\Angga Lesmana\\Documents\\mine\\coding\\C#\\NetAngularAuth\\NetAngularAuthWebApi\\wwwroot\\testupload.xlsx",
+      "SourceId": "NetAngularAuthWebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Angga Lesmana\\Documents\\mine\\coding\\C#\\NetAngularAuth\\NetAngularAuthWebApi\\wwwroot\\",
+      "BasePath": "_content/NetAngularAuthWebApi",
+      "RelativePath": "testupload.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\testupload.xlsx"
+    },
+    {
       "Identity": "C:\\Users\\Angga Lesmana\\Documents\\mine\\coding\\C#\\NetAngularAuth\\NetAngularAuthWebApi\\wwwroot\\Uploads\\101\\image.png",
       "SourceId": "NetAngularAuthWebApi",
       "SourceType": "Discovered",
@@ -1052,6 +1069,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\101\\image.png"
+    },
+    {
+      "Identity": "C:\\Users\\Angga Lesmana\\Documents\\mine\\coding\\C#\\NetAngularAuth\\NetAngularAuthWebApi\\wwwroot\\Uploads\\1bb51445-626c-4d01-a279-8eda273a24bd..xlsx",
+      "SourceId": "NetAngularAuthWebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Angga Lesmana\\Documents\\mine\\coding\\C#\\NetAngularAuth\\NetAngularAuthWebApi\\wwwroot\\",
+      "BasePath": "_content/NetAngularAuthWebApi",
+      "RelativePath": "Uploads/1bb51445-626c-4d01-a279-8eda273a24bd..xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\1bb51445-626c-4d01-a279-8eda273a24bd..xlsx"
+    },
+    {
+      "Identity": "C:\\Users\\Angga Lesmana\\Documents\\mine\\coding\\C#\\NetAngularAuth\\NetAngularAuthWebApi\\wwwroot\\Uploads\\d493c7e6-4679-49ab-aed0-42c751fdd6bc..xlsx",
+      "SourceId": "NetAngularAuthWebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Angga Lesmana\\Documents\\mine\\coding\\C#\\NetAngularAuth\\NetAngularAuthWebApi\\wwwroot\\",
+      "BasePath": "_content/NetAngularAuthWebApi",
+      "RelativePath": "Uploads/d493c7e6-4679-49ab-aed0-42c751fdd6bc..xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\d493c7e6-4679-49ab-aed0-42c751fdd6bc..xlsx"
     }
   ]
 }

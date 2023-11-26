@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets\\Uploads\\101\\image.png"
     },
     {
+      "Id": "C:\\Users\\Angga Lesmana\\Documents\\mine\\coding\\C#\\NetAngularAuth\\NetAngularAuthWebApi\\wwwroot\\Uploads\\1bb51445-626c-4d01-a279-8eda273a24bd..xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\1bb51445-626c-4d01-a279-8eda273a24bd..xlsx"
+    },
+    {
+      "Id": "C:\\Users\\Angga Lesmana\\Documents\\mine\\coding\\C#\\NetAngularAuth\\NetAngularAuthWebApi\\wwwroot\\Uploads\\d493c7e6-4679-49ab-aed0-42c751fdd6bc..xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\d493c7e6-4679-49ab-aed0-42c751fdd6bc..xlsx"
+    },
+    {
+      "Id": "C:\\Users\\Angga Lesmana\\Documents\\mine\\coding\\C#\\NetAngularAuth\\NetAngularAuthWebApi\\wwwroot\\testupload.xlsx",
+      "PackagePath": "staticwebassets\\testupload.xlsx"
+    },
+    {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.NetAngularAuthWebApi.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

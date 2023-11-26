@@ -19,23 +19,23 @@ namespace NetAngularAuthWebApi.Controllers
         {
             _uploadService = uploadService;
         }
-        [HttpPost("upload-files")]
-        public async Task<IActionResult> PostSigleFile([FromBody] FileUploadModel fileDetails)
-        {
-            if (fileDetails == null)
-            {
-                return BadRequest();
-            }
-            try
-            {
-                await _uploadService.PostFileAsync(fileDetails.FileDetails, fileDetails.FileType);
-                return Ok();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        // [HttpPost("upload-files")]
+        // public async Task<IActionResult> PostSigleFile([FromBody] FileUploadEntity fileDetails)
+        // {
+        //     if (fileDetails == null)
+        //     {
+        //         return BadRequest();
+        //     }
+        //     try
+        //     {
+        //         await _uploadService.PostFileAsync(fileDetails.FileDetails, fileDetails.FileType);
+        //         return Ok();
+        //     }
+        //     catch (Exception)
+        //     {
+        //         throw;
+        //     }
+        // }
         [HttpGet("download-file")]
         public async Task<IActionResult> DownloadFileAsync(Guid id)
         {

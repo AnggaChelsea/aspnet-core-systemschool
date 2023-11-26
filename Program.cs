@@ -17,6 +17,10 @@ using Serilog;
 using NetAngularAuthWebApi.helpers;
 using Microsoft.Extensions.Configuration;
 using System.Configuration;
+using ITfoxtec.Identity.Saml2;
+using ITfoxtec.Identity.Saml2.Schemas.Metadata;
+using ITfoxtec.Identity.Saml2.MvcCore.Configuration;
+
 
 Log.Logger = new LoggerConfiguration()
 .MinimumLevel.Debug()
@@ -25,7 +29,6 @@ Log.Logger = new LoggerConfiguration()
 
 
  Log.Information("Starting web application");
-
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Logging.AddConsole();
@@ -45,11 +48,40 @@ builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddScoped<IMailService, LocalMailService>();
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IExcel, ExcelService>();
 builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 
 builder.Services.AddScoped<pdfGenerateDinkToPdf>();
 //for response file
 builder.Services.AddSingleton<FileExtensionContentTypeProvider>();
+
+//saml
+
+builder.Services.AddRazorPages();
+builder.Services.Configure<Saml2Configuration>(builder.Configuration.GetSection("Saml2"));
+
+builder.Services.Configure<Saml2Configuration>(saml2Configuration =>
+    {
+        saml2Configuration.AllowedAudienceUris.Add(saml2Configuration.Issuer);
+
+        var entityDescriptor = new EntityDescriptor();
+        entityDescriptor.ReadIdPSsoDescriptorFromUrl(new Uri(builder.Configuration["Saml2:IdPMetadata"]));
+        if (entityDescriptor.IdPSsoDescriptor != null)
+        {
+            saml2Configuration.SingleSignOnDestination = entityDescriptor.IdPSsoDescriptor.SingleSignOnServices.First().Location;
+            saml2Configuration.SignatureValidationCertificates.AddRange(entityDescriptor.IdPSsoDescriptor.SigningCertificates);
+        }
+        else
+        {
+            throw new Exception("IdPSsoDescriptor not loaded from metadata.");
+        }
+    });
+
+    builder.Services.AddSaml2();
+
+   
+
+//end
 
 //add inject service
 builder.Services.AddScoped<IFileService, FileService>();
@@ -119,11 +151,21 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseSerilogRequestLogging();
-
+ app.UseSaml2();
+app.UseRouting();
 app.UseHttpsRedirection();
 app.UseCors("MyPolic");
 app.UseAuthentication();
 app.UseAuthorization();
+
+// app.UseEndpoints(endpoints =>
+// {
+//     endpoints.MapRazorPages();
+
+//     endpoints.MapControllerRoute(
+//         name: "default",
+//         pattern: "{controller=Home}/{action=Index}/{id?}");
+// });
 
 
 // app.Run(async (context) => {

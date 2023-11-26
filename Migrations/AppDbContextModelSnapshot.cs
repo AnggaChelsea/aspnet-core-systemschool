@@ -114,11 +114,51 @@ namespace NetAngularAuthWebApi.Migrations
                     b.ToTable("CourseStudent", (string)null);
                 });
 
+            modelBuilder.Entity("NetAngularAuthWebApi.Models.Domain.Employee", b =>
+                {
+                    b.Property<int>("EmployeeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployeeId"));
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EmployeeId");
+
+                    b.ToTable("Employees");
+                });
+
+            modelBuilder.Entity("NetAngularAuthWebApi.Models.Domain.ExcelData", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Column1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Column2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ExcelData");
+                });
+
             modelBuilder.Entity("NetAngularAuthWebApi.Models.Domain.FileDetails", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<byte[]>("FileData")
                         .HasColumnType("varbinary(max)");
@@ -181,6 +221,25 @@ namespace NetAngularAuthWebApi.Migrations
                     b.HasIndex("TeacherId");
 
                     b.ToTable("Mapels");
+                });
+
+            modelBuilder.Entity("NetAngularAuthWebApi.Models.Domain.MultiUploadFile", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<byte[]>("Content")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MultiUploadFiles");
                 });
 
             modelBuilder.Entity("NetAngularAuthWebApi.Models.Domain.Roles", b =>
@@ -248,6 +307,28 @@ namespace NetAngularAuthWebApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TimeSchools");
+                });
+
+            modelBuilder.Entity("NetAngularAuthWebApi.Models.Domain.UploadExcelStudent", b =>
+                {
+                    b.Property<int>("StudentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StudentId"));
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Roll")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("StudentId");
+
+                    b.ToTable("uploadExcelStudents");
                 });
 
             modelBuilder.Entity("NetAngularAuthWebApi.Models.SchoolClass", b =>
