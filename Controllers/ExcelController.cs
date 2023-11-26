@@ -15,6 +15,7 @@ namespace NetAngularAuthWebApi.Controllers
     public class ExcelController : ControllerBase
     {
         private readonly AppDbContext _dbContext;
+        private readonly string _uploadFolder = "UploadFileExcel";
 
         public ExcelController(AppDbContext dbContext)
         {
@@ -29,7 +30,17 @@ namespace NetAngularAuthWebApi.Controllers
             {
                 if (model.File != null)
                 {
-                    using (var stream = model.File.OpenReadStream())
+                     // Membuat folder jika belum ada
+                     if(Directory.Exists(_uploadFolder)){
+                        Directory.CreateDirectory(_uploadFolder);
+                     }
+                     //create unix name
+                     var fileName = $"{DateTime.Now.Ticks.ToString()}-{model.File.FileName}";
+                     var filePath = Path.Combine(_uploadFolder, fileName);
+                     using(var fileStream = new FileStream(filePath, FileMode.Create)){
+                        model.File.CopyTo(fileStream);
+                     }
+                    using (var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
                     {
                         ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
@@ -59,9 +70,11 @@ namespace NetAngularAuthWebApi.Controllers
                                     // Simpan ke database menggunakan DbContext
                                     SaveToDatabase(dr);
                                 }
-
+                                // Menghapus file setelah data diunggah dan disimpan
+                                // System.IO.File.Delete(filePath);
                                 return Ok(new { Message = "Excel Successfully Converted to Data Table and Saved to Database" });
                             }
+
                         }
                         else
                             return BadRequest(new { Message = "No Work Sheet available in Excel File" });
