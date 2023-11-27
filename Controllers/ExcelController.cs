@@ -94,15 +94,25 @@ namespace NetAngularAuthWebApi.Controllers
         private void SaveToDatabase(DataRow dr)
         {
             // Membuat objek ExcelData dari DataRow
-            var excelData = new ExcelData
+            var excelData = new ExcelTam
             {
-                Column1 = dr["Column1"].ToString(),
-                Column2 = dr["Column2"].ToString(),
+                No = dr["No"].ToString(),
+                NoFrame = dr["NoFrame"].ToString(),
+                Dateproduction = dr["Dateproduction"].ToString(),
+                Vehicle = dr["Vehicle"].ToString(),
+                ConversionType = dr["ConversionType"].ToString(),
+                Customer = dr["Customer"].ToString(),
+                BodyBuilder = dr["BodyBuilder"].ToString(),
+                NoSkrb = dr["NoSkrb"].ToString(),
+                Remarks = dr["Remarks"].ToString(),
+                Dealer = dr["Dealer"].ToString(),
+                Cabang = dr["Cabang"].ToString(),
+                Province = dr["Province"].ToString()
                 // Tambahkan properti lain sesuai kebutuhan
             };
 
             // Menyimpan objek ke database menggunakan DbContext
-            _dbContext.ExcelData.Add(excelData);
+            _dbContext.ExcelTams.Add(excelData);
             _dbContext.SaveChanges();
         }
     }

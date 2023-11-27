@@ -39,6 +39,7 @@ namespace NetAngularAuthWebApi.Context
         public DbSet<MultiUploadFile> MultiUploadFiles { get; set; }
         public DbSet<UploadExcelStudent> uploadExcelStudents { get; set; }
         public DbSet<Employee> Employees {get; set;}
+        public DbSet<ExcelTam> ExcelTams {get; set;}
 
 
 
