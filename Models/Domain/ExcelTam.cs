@@ -20,7 +20,6 @@ namespace NetAngularAuthWebApi.Models.Domain
         public string Dealer { get; set; }
         public string Cabang { get; set; }
         public string Province { get; set; }
-    
 
     }
 }

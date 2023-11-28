@@ -1,5 +1,0 @@
-2023-11-25 21:02:46.873 +07:00 [INF] Starting web application
-2023-11-25 21:05:01.317 +07:00 [INF] Starting web application
-2023-11-25 21:05:15.809 +07:00 [INF] Starting web application
-2023-11-25 21:14:42.276 +07:00 [INF] Starting web application
-2023-11-25 21:56:25.144 +07:00 [INF] Starting web application

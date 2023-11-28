@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NetAngularAuthWebApi.Context;
+using NetAngularAuthWebApi.helpers;
 using NetAngularAuthWebApi.Models.Domain;
 using OfficeOpenXml;
 
@@ -91,6 +92,24 @@ namespace NetAngularAuthWebApi.Controllers
             }
         }
 
+        [HttpGet("download-excel-template")]
+            public async Task<FileResult> Download(CancellationToken ct)
+            {
+            List<Product> productList = new List<Product>
+                {
+                    new Product
+                    {
+                        Name = "Adelia",
+                        Quantity = 12,
+                        Price = 121212,
+                        IsActive = true,
+                        ExpiryDate = DateTime.UtcNow // Assuming you want to use the current UTC time
+                    }
+                };
+                var file = ExcelHelper.CreateFile(productList);
+                return File(file, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "products.xlsx");
+            }
+
         private void SaveToDatabase(DataRow dr)
         {
             // Membuat objek ExcelData dari DataRow
@@ -115,5 +134,6 @@ namespace NetAngularAuthWebApi.Controllers
             _dbContext.ExcelTams.Add(excelData);
             _dbContext.SaveChanges();
         }
+        
     }
 }

@@ -62,6 +62,26 @@
               "target": "Package",
               "version": "[4.0.3, )"
             },
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.102.1, )"
+            },
+            "ClosedXML.Extensions.Mvc": {
+              "target": "Package",
+              "version": "[0.4.0, )"
+            },
+            "ClosedXML.Extensions.WebApi": {
+              "target": "Package",
+              "version": "[0.3.0, )"
+            },
+            "ClosedXML.Report": {
+              "target": "Package",
+              "version": "[0.2.8, )"
+            },
+            "ClosedXML.Signed": {
+              "target": "Package",
+              "version": "[0.95.4, )"
+            },
             "Dapper": {
               "target": "Package",
               "version": "[2.0.151, )"
@@ -151,6 +171,10 @@
             "Microsoft.OpenApi": {
               "target": "Package",
               "version": "[1.6.9, )"
+            },
+            "NPOI": {
+              "target": "Package",
+              "version": "[2.6.2, )"
             },
             "PDFsharp": {
               "target": "Package",

@@ -4,10 +4,13 @@
 
     File pdf using File and FormFile to upload pdf single
 
-#### 2. Create Html to pdf 
+#### 2. Create Html to pdf
 
     Create Pdf to html using DinkToPdf
 
-#### 3. Create Upload data excel direct insert into db 
+#### 3. Create Upload data excel direct insert into db
 
 * [ ] Using EPPlus
+
+  for generate excel
+* [ ] NPOI

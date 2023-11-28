@@ -1,0 +1,2 @@
+2023-11-28 21:00:37.460 +07:00 [INF] Starting web application
+2023-11-28 21:18:57.928 +07:00 [INF] Starting web application

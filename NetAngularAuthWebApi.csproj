@@ -56,5 +56,11 @@
     <PackageReference Include="DinkToPdfCopy" Version="1.0.0"/>
     <PackageReference Include="Microsoft.AspNetCore.Razor.Language" Version="6.0.25"/>
     <PackageReference Include="EPPlus" Version="7.0.0"/>
+    <PackageReference Include="ClosedXML" Version="0.102.1"/>
+    <PackageReference Include="ClosedXML.Report" Version="0.2.8"/>
+    <PackageReference Include="ClosedXML.Extensions.Mvc" Version="0.4.0"/>
+    <PackageReference Include="ClosedXML.Signed" Version="0.95.4"/>
+    <PackageReference Include="ClosedXML.Extensions.WebApi" Version="0.3.0"/>
+    <PackageReference Include="NPOI" Version="2.6.2"/>
   </ItemGroup>
 </Project>
